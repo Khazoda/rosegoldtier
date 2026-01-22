@@ -19,4 +19,8 @@ public class RoseGoldTierCommon {
 
     if (Services.PLATFORM.isModLoaded("rosegoldtier")) Constants.LOG.info("- Rose Gold Tier Loaded -");
   }
+
+  public static void postInit() {
+
+  }
 }

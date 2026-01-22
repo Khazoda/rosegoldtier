@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.khazoda.rosegoldtier.RoseGoldTier"
+            "com.khazoda.rosegoldtier.RoseGoldTierFabric"
         ]
     },
     "mixins": [
