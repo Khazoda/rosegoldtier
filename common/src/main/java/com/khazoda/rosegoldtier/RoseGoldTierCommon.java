@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 public class RoseGoldTierCommon {
   public static final Reginald REGISTRARS = new Reginald();
   public static final boolean mod_loaded_farmersdelight = Services.PLATFORM.isModLoaded("farmersdelight");
-  public static final boolean mod_loaded_wardentools = Services.PLATFORM.isModLoaded("wardentools");
+
 
 
   public static void init() {

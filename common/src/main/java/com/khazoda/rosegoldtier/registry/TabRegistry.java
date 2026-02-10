@@ -1,14 +1,15 @@
 package com.khazoda.rosegoldtier.registry;
 
 import com.khazoda.rosegoldtier.RoseGoldTierCommon;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 
 import java.util.function.Supplier;
 
 import static com.khazoda.rosegoldtier.RoseGoldTierCommon.mod_loaded_farmersdelight;
-import static com.khazoda.rosegoldtier.RoseGoldTierCommon.mod_loaded_wardentools;
 
 @SuppressWarnings("unused")
 public class TabRegistry {
@@ -30,15 +31,24 @@ public class TabRegistry {
             if (mod_loaded_farmersdelight) output.accept(MainRegistry.ROSE_GOLD_KNIFE.get());
             output.accept(MainRegistry.ROSE_GOLD_BLEND.get());
             output.accept(MainRegistry.ROSE_GOLD_NUGGET.get());
-            if (!mod_loaded_wardentools) output.accept(MainRegistry.ROSE_GOLD_INGOT.get());
+            if (isItemMissing("wardentools:rose_gold_ingot")) {
+              output.accept(MainRegistry.ROSE_GOLD_INGOT.get());
+            }
             output.accept(MainRegistry.ROSE_GOLD_HORSE_ARMOR.get());
-            if (!mod_loaded_wardentools) output.accept(MainRegistry.ROSE_GOLD_BLOCK_ITEM.get());
+            if (isItemMissing("wardentools:rose_gold_block")) {
+              output.accept(MainRegistry.ROSE_GOLD_BLOCK_ITEM.get());
+            }
             output.accept(MainRegistry.ROSE_GOLD_BLEND_BLOCK_ITEM.get());
             output.accept(MainRegistry.ROSE_GOLD_DOOR_ITEM.get());
             output.accept(MainRegistry.ROSE_GOLD_TRAPDOOR_ITEM.get());
             output.accept(MainRegistry.ROSE_GOLD_PRESSURE_PLATE_ITEM.get());
           })
           .build());
+
+  private static boolean isItemMissing(String itemId) {
+    return !BuiltInRegistries.ITEM.containsKey(
+        ResourceLocation.parse(itemId));
+  }
 
   public static void init() {
   }
