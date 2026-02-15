@@ -35,7 +35,7 @@ public class RoseGoldArmorMaterial {
   }
 
 //  Todo: change these values
-  public static final Holder<ArmorMaterial> HOLDER = register("rosegoldtier", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+  public static final Holder<ArmorMaterial> HOLDER = register("rose_gold", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
     map.put(ArmorItem.Type.BOOTS, 2);
     map.put(ArmorItem.Type.LEGGINGS, 5);
     map.put(ArmorItem.Type.CHESTPLATE, 7);
